@@ -2,9 +2,9 @@ import counterReducer, {
   increment,
   decrement,
   incrementByAmount,
-} from './counterSlice';
+} from './carSlice';
 
-describe('counter reducer', () => {
+describe('car reducer', () => {
   const initialState = {
     value: 3,
     status: 'idle',

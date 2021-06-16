@@ -1,17 +1,17 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
+import { Cars } from './features/car/Cars';
 import './App.css';
 import Login from './features/user/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
+    <div className="App">     
       <header className="App-header">
-
-        <Counter />
+      <Login/>       
+      </header>
+      <Cars />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          4x4 Bazaar - Buy your perfect car online!
         </p>
         <span>
           <span>Learn </span>
@@ -51,7 +51,6 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
     </div>
   );
 }
