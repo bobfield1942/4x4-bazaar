@@ -1,14 +1,75 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './carAPI';
-
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchCount } from "./carAPI";
 
 const initialState = {
-  cars: [{
-    make: 'Toyota',
-    model: 'Hilux',
-    price: 100000,
-    status: 'idle'
-}]
+  cars: [
+    {
+      id: 1,
+      make: "Toyota",
+      model: "Hilux",
+      year: "1986",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 100000,
+      imgsrc: "./images/toyota-hilux-1986.jpg",
+      status: "idle",
+
+    },
+    {
+      id: 2,
+      make: "Suzuki",
+      model: "Jimny",
+      year: "2014",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 120000,
+      imgsrc: "./images/jimny.jpg",
+      status: "idle",
+
+    },
+    {
+      id: 3,
+      make: "Ineos",
+      model: "Grenadier",
+      year: "2022",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 100000,
+      imgsrc: "./images/ineos.jpg",
+      status: "idle",
+
+    },
+    {
+      id: 4,
+      make: "Land Rover",
+      model: "Defender",
+      year: "1989",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 100000,
+      imgsrc: "./images/defender.jpg",
+      status: "idle",
+
+    },
+    {
+      id: 5,
+      make: "Toyota",
+      model: "Land Cruiser",
+      year: "1999",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 120000,
+      imgsrc: "./images/landcruiser.jpg",
+      status: "idle",
+
+    },
+    {
+      id: 6,
+      make: "Jeep",
+      model: "CJ6",
+      year: "1980",
+      details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
+      price: 100000,
+      imgsrc: "./images/jeep.jpg",
+      status: "idle",
+
+    },
+  ],
   /* status: 'idle',*/
 };
 
@@ -18,7 +79,7 @@ const initialState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const incrementAsync = createAsyncThunk(
-  'car/fetchCount',
+  "car/fetchCount",
   async (amount) => {
     const response = await fetchCount(amount);
     // The value we return becomes the `fulfilled` action payload
@@ -27,7 +88,7 @@ export const incrementAsync = createAsyncThunk(
 );
 
 export const carsSlice = createSlice({
-  name: 'cars',
+  name: "cars",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -39,7 +100,7 @@ export const carsSlice = createSlice({
       state.cars = [...state.cars, action.payload.car];
     },
     remove: (state, action) => {
-      state.cars = null;
+      state.cars = [...state.cars.filter(c => c.id != action.payload)];
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -47,20 +108,19 @@ export const carsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.status = "idle";
         state.value += action.payload;
       });
   },
 });
 
-
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectCars= (state) => state.cars;
+export const selectCars = (state) => state.cars;
 export const { add, remove } = carsSlice.actions;
 
 export default carsSlice.reducer;

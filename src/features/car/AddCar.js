@@ -1,42 +1,82 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import carimage from '../../images/toyota-hilux-1986.jpg'; 
-import { selectCars, remove, add} from './carsSlice'
-import styles from './car.module.css';
+/*import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import carimage from "../../images/toyota-hilux-1986.jpg";
+import { selectCars, add } from "./carsSlice";
+import styles from "./car.module.css";
 
-export function AddCar() {
+export default function AddCar() {
   const dispatch = useDispatch();
   const cars = useSelector(selectCars);
-  
+  let input
 
   return (
-    <div key={car.make}>
-      {console.log(car.car)}
-      <div className={styles.row}>
-       <img height="120" src={carimage} alt="this is car image" />
-       <span>{car.car.make}</span>
-       <span>{car.car.model}</span>
-       <span>{car.car.price}</span>
-       </div>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Add Car"
-          onClick={() => dispatch(add(car))}
-        >
-          Add Car To Listing
+    <div>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
+        }
+        dispatch(add(input.value))
+        input.value = ''
+      }}>
+        <input ref={node => input = node} />
+        <button type="submit">
+          Add Todo
         </button>
-      </div>
-      <div className={styles.row}>
-        <button
-          className={styles.asyncButton}
-          /*onClick={() => dispatch(addAsync(addAsync))}*/
-        
-        >
-          Add Async
-        </button>
-    
-      </div>
+      </form>
+    </div>
+  )
+}*/
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
+export default function FormDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        Sell your vehicle
+      </Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here. We will send updates
+            occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            Subscribe
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

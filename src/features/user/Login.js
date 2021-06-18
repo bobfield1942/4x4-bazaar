@@ -10,8 +10,7 @@ function Login() {
 
     return (
         <div>
-            <h4>Login</h4>
-            {user ? <h4>The user is {user}</h4> : <h4>NOBODY is signed in</h4>}
+            {user ? <h4>{user}</h4> : <h4>Please Sign In</h4>}
             <button onClick={() => dispatch(setUser({user:"Brett Dalldorf"}))}>Log Me in</button>
             <button onClick={() => dispatch(logout())}>Log Out</button>
         </div>
