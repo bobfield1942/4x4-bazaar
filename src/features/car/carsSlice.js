@@ -97,6 +97,7 @@ export const carsSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
+      console.log(action.payload)
       state.cars = [...state.cars, action.payload.car];
     },
     remove: (state, action) => {
