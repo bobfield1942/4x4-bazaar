@@ -88,7 +88,6 @@ function Login() {
   };
 
   const handleSave = () => {
-    console.log(userValues);
     dispatch(
       setUser({
         user: {

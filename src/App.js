@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: `url('./images/landing2.jpg')`,
+    backgroundImage: `url('./images/landing3.jpg')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -86,12 +86,12 @@ export default function Album() {
               color="textPrimary"
               gutterBottom
             >
-              Buy you DREAM 4x4
+              Buy your DREAM 4x4
             </Typography>
             <Typography
               variant="h5"
               align="center"
-              color="textSecondary"
+              color="textPrimary"
               paragraph
             >
               Your ADVENTURE awaits! 4x4 Bazaar has the widest selection in NEW and USED 4x4's
