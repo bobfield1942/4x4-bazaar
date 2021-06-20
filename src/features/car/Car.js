@@ -8,12 +8,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { useSelector, useDispatch } from 'react-redux';
-import {remove, add} from './carsSlice'
+import { useSelector, useDispatch } from "react-redux";
+import { remove, add } from "./carsSlice";
 
-
-export default function Car({car}) {
-
+export default function Car({ car }) {
   const dispatch = useDispatch();
 
   const useStyles = makeStyles((theme) => ({
@@ -49,36 +47,34 @@ export default function Car({car}) {
   }));
 
   const classes = useStyles();
- 
 
-console.log(car)
+  console.log(car);
 
   return (
-
-  
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={car.imgsrc}
-                    title={car.make + ' ' + car.model}
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                    {car.make + ' ' + car.model + '(' + car.year +')'}
-                    </Typography>
-                    <Typography>
-                     {car.details}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary" onClick={() => dispatch(add(car))}>
+    <Card className={classes.card}>
+      <CardMedia
+        className={classes.cardMedia}
+        image={car.imgsrc}
+        title={car.make + " " + car.model}
+      />
+      <CardContent className={classes.cardContent}>
+        <Typography gutterBottom variant="h5" component="h2">
+          {car.make + " " + car.model + "(" + car.year + ")"}
+        </Typography>
+        <Typography>{car.details}</Typography>
+      </CardContent>
+      <CardActions>
+        {/*<Button size="small" color="primary" onClick={() => dispatch(add(car))}>
                       Add Car
-                    </Button>
-                    <Button size="small" color="primary" onClick={() => dispatch(remove(car.id))}>
-                     Remove Car
-                    </Button >
-                  </CardActions>
-                </Card>
-       
+          </Button>*/}
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => dispatch(remove(car.id))}
+        >
+          Delete Car
+        </Button>
+      </CardActions>
+    </Card>
   );
 }

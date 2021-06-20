@@ -9,6 +9,7 @@ import Link from "@material-ui/core/Link";
 import AddCar from "./features/car/AddCar";
 import Cars from "./features/car/Cars";
 import Header from "./features/header/Header";
+import Paper from '@material-ui/core/Paper';
 
 function Copyright() {
   return (
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+   // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
@@ -53,6 +54,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  mainFeaturedPost: {
+    position: 'relative',
+    backgroundColor: theme.palette.grey[800],
+    color: theme.palette.common.white,
+    marginBottom: theme.spacing(4),
+    backgroundImage: `url('./images/landing2.jpg')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+  },
   
 }));
 
@@ -64,7 +75,7 @@ export default function Album() {
     <React.Fragment>
       <CssBaseline />
       <Header />
-      <main>
+      <Paper className={classes.mainFeaturedPost}>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
@@ -89,21 +100,16 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Search cars
-                  </Button>
-                </Grid>
-                <Grid item>
                   <AddCar />
                 </Grid>
               </Grid>
             </div>
           </Container>
         </div>
-
+        </Paper >
         <Cars />
-        
-      </main>
+      
+
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
