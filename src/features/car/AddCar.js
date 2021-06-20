@@ -11,8 +11,6 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCars, add } from "./carsSlice";
-import Chip from "@material-ui/core/Chip";
-import Avatar from "@material-ui/core/Avatar";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -39,7 +37,6 @@ export default function FormDialog() {
   };
 
   const handleSave = () => {
-    console.log(newCar);
     dispatch(
       add({
         car: {
@@ -67,9 +64,8 @@ export default function FormDialog() {
   return (
     <div>
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Sell your vehicle
+        Sell your vehicle - Total Cars {(state && state.cars.length || 0)} 
       </Button>
-      <Chip label={"Total Cars  " + (state && state.cars.length || 0)} />
       <Dialog
         open={open}
         onClose={handleClose}

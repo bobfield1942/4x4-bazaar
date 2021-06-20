@@ -48,8 +48,6 @@ export default function Car({ car }) {
 
   const classes = useStyles();
 
-  console.log(car);
-
   return (
     <Card className={classes.card}>
       <CardMedia
