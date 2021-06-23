@@ -135,12 +135,12 @@ export default function FormDialog() {
             onChange={handleSelect}
           >
            <MenuItem value={"./images/placeholder.jpg"}>None</MenuItem>
-          <MenuItem value={"./images/toyota-hilux-1986.jpg" }>Hilux</MenuItem>
-          <MenuItem value={"./images/jimny.jpg" }>Jimny</MenuItem>
-          <MenuItem value={"./images/ineos.jpg" }>Grenadier</MenuItem>
-          <MenuItem value={"./images/defender.jpg" }>Defender</MenuItem>
-          <MenuItem value={"./images/landcruiser.jpg" }>Land Cruiser</MenuItem>
-          <MenuItem value={"./images/jeep.jpg" }>Jeep</MenuItem>
+            <MenuItem value={"./images/toyota-hilux-1986.jpg" }>Hilux</MenuItem>
+            <MenuItem value={"./images/jimny.jpg" }>Jimny</MenuItem>
+            <MenuItem value={"./images/ineos.jpg" }>Grenadier</MenuItem>
+            <MenuItem value={"./images/defender.jpg" }>Defender</MenuItem>
+            <MenuItem value={"./images/landcruiser.jpg" }>Land Cruiser</MenuItem>
+            <MenuItem value={"./images/jeep.jpg" }>Jeep</MenuItem>
           </Select>
         </DialogContent>
         <DialogActions>

@@ -11,7 +11,6 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 100000,
       imgsrc: "./images/toyota-hilux-1986.jpg",
-      status: "idle",
 
     },
     {
@@ -22,7 +21,6 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 120000,
       imgsrc: "./images/jimny.jpg",
-      status: "idle",
 
     },
     {
@@ -33,7 +31,6 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 100000,
       imgsrc: "./images/ineos.jpg",
-      status: "idle",
 
     },
     {
@@ -44,7 +41,6 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 100000,
       imgsrc: "./images/defender.jpg",
-      status: "idle",
 
     },
     {
@@ -55,7 +51,6 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 120000,
       imgsrc: "./images/landcruiser.jpg",
-      status: "idle",
 
     },
     {
@@ -66,11 +61,10 @@ const initialState = {
       details: "An icon, one of the first true 4x4 bakkies, they dont make them like this anymore",
       price: 100000,
       imgsrc: "./images/jeep.jpg",
-      status: "idle",
 
     },
   ],
-  /* status: 'idle',*/
+   status: 'idle',
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
