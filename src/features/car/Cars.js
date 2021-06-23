@@ -7,12 +7,9 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Car from "./Car";
 
-
 export default function Cars() {
-
   const state = useSelector(selectCars);
   const dispatch = useDispatch();
-
 
   const useStyles = makeStyles((theme) => ({
     icon: {
@@ -50,17 +47,17 @@ export default function Cars() {
 
   return (
     <div>
-            <div className={styles.row}>
-                <Container className={classes.cardGrid} maxWidth="md">
-                <Grid container spacing={4}>
-                  {state.cars.map((c) => (
-                      <Grid item key={c} xs={12} sm={6} md={4}>
-                    <Car car={c} />
-                    </Grid>
-                    ))}
-                  </Grid>
-                </Container>
-            </div>
+      <div className={styles.row}>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {state.cars.map((c) => (
+              <Grid item key={c} xs={12} sm={6} md={4}>
+                <Car car={c} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </div>
     </div>
   );
 }

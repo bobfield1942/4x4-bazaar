@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel  from '@material-ui/core/InputLabel';
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -23,10 +23,8 @@ export default function FormDialog() {
     year: "",
     details: "",
     price: "",
-    imgsrc: "./images/placeholder.jpg" ,
+    imgsrc: "./images/placeholder.jpg",
   });
-
-
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -60,11 +58,10 @@ export default function FormDialog() {
     setNewCar({ ...newCar, imgsrc: event.target.value });
   };
 
-
   return (
     <div>
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
-        Sell your vehicle - Total Cars {(state && state.cars.length || 0)} 
+        Sell your vehicle - Total Cars {state && (state.cars.length || 0)}
       </Button>
       <Dialog
         open={open}
@@ -134,13 +131,13 @@ export default function FormDialog() {
             value={newCar && newCar.imgsrc}
             onChange={handleSelect}
           >
-           <MenuItem value={"./images/placeholder.jpg"}>None</MenuItem>
-            <MenuItem value={"./images/toyota-hilux-1986.jpg" }>Hilux</MenuItem>
-            <MenuItem value={"./images/jimny.jpg" }>Jimny</MenuItem>
-            <MenuItem value={"./images/ineos.jpg" }>Grenadier</MenuItem>
-            <MenuItem value={"./images/defender.jpg" }>Defender</MenuItem>
-            <MenuItem value={"./images/landcruiser.jpg" }>Land Cruiser</MenuItem>
-            <MenuItem value={"./images/jeep.jpg" }>Jeep</MenuItem>
+            <MenuItem value={"./images/placeholder.jpg"}>None</MenuItem>
+            <MenuItem value={"./images/toyota-hilux-1986.jpg"}>Hilux</MenuItem>
+            <MenuItem value={"./images/jimny.jpg"}>Jimny</MenuItem>
+            <MenuItem value={"./images/ineos.jpg"}>Grenadier</MenuItem>
+            <MenuItem value={"./images/defender.jpg"}>Defender</MenuItem>
+            <MenuItem value={"./images/landcruiser.jpg"}>Land Cruiser</MenuItem>
+            <MenuItem value={"./images/jeep.jpg"}>Jeep</MenuItem>
           </Select>
         </DialogContent>
         <DialogActions>
